@@ -2,56 +2,64 @@ import { useCallback, useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-  const [radius, setRadius] = useState<number>(240);
+  const [radius, setRadius] = useState<number>(340);
   const [activeButton, setActiveButton] = useState<number>(0);
 
   const data = [
     {
       label: "3312 R.E.G",
-      title: "1 Lorem",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum."
+      title: "Black Myth: Wukong",
+      desc: "Black Myth: Wukong is an action RPG rooted in Chinese mythology. The story is based on Journey to the West, one of the Four Great Classical Novels of Chinese literature. You shall set out as the Destined One to venture into the challenges and marvels ahead, to uncover the obscured truth beneath the veil of a glorious legend from the past.",
+      img: "../public/wukong.jpg"
     },
 
     {
       label: "1425 R.E.G",
-      title: "2 Lorem",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum."
+      title: "Monster Hunter Wilds",
+      desc: "Capcom dropped the gameplay trailer for Monster Hunter Wilds during the PlayStation State of Play stream, and true to its name, it looks pretty wild. A number of seemingly important characters were introduced, with a pretty grim way to start the story of the game – quite unlike the hopeful tone that World set in its opening moments. Of course, I’ll be ignoring most of that. This video shows gameplay after all, so let’s focus on that instead. And one of the first takeaways is the merging of the Tailrider system from World and the Palamutes from Rise in Monster Hunter Wilds, in the form of the Seikret.",
+      img: "/monster-hunter.jpg"
     },
 
     {
       label: "3388 R.E.G",
       title: "3 Lorem",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum."
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
+      img: "/wukong.jpg"
     },
 
     {
       label: "3345 R.E.G",
       title: "4 Lorem",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum."
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
+      img: "/wukong.jpg"
     },
 
     {
       label: "2134 R.E.G",
       title: "5 Lorem",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum."
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
+      img: "/wukong.jpg"
     },
 
     {
       label: "8902 R.E.G",
       title: "6 Lorem",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum."
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
+      img: "/wukong.jpg"
     },
 
     {
       label: "4231 R.E.G",
       title: "7 Lorem",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum."
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
+      img: "/wukong.jpg"
     },
 
     {
       label: "5324 R.E.G",
       title: "8 Lorem",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum."
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
+      img: "/wukong.jpg"
     }
   ]
 
@@ -100,14 +108,19 @@ function App() {
   }
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+    <div className="container" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", backgroundImage: `url(${data[activeButton].img})`, backgroundSize: "cover" }}>
       <div style={{ display: "flex", justifyContent: "start", position: "relative", width: "100%" }}>
         <div className="circle-container">
-          {data.map(
-            (_, i) => (<button className={`circle-button ${activeButton == i ? "active" : ""}`} onClick={() => handleButtonClick(i)}>
-              <p style={{ position: "absolute", width: "80px", transform: `translate(calc(-150%), -20px) scale(${activeButton == i ? "1.5" : "1"})`, transition: "0.5s" }}>{_.label}</p>
-            </button>)
-          )
+          {
+            data.map(
+              (_, i) => (
+                <button className={`circle-button ${activeButton == i ? "active" : ""}`} onClick={() => handleButtonClick(i)}>
+                  <p style={{ position: "absolute", width: "80px", transform: `translate(calc(-150%), -20px) scale(${activeButton == i ? "1.5" : "1"})`, transition: "0.5s" }}>
+                    <b>{_.label.split(" ")[0]}</b> {_.label.split(" ")[1]}
+                  </p>
+                </button>
+              )
+            )
           }
         </div>
         <div className="content">

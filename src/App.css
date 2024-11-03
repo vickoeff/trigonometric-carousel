@@ -2,6 +2,21 @@
   box-sizing: border-box;
 }
 
+.container {
+  transition: 1.5s;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  background-color: #000000b0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .circle-container {
   position: relative;
   width: 200px;
@@ -19,8 +34,8 @@
   top: 0;
   bottom: 0;
   margin: auto;
-  width: calc(100% + 270px);
-  height: calc(100% + 270px);
+  width: calc(100% + 470px);
+  height: calc(100% + 470px);
   border: 6px solid white;
   border-radius: 100%;
 }
@@ -35,6 +50,7 @@
   border: 4px solid #fff;
   color: white;
   transition: transform 0.5s ease;
+  cursor: pointer;
 }
 
 .circle-button.active {
@@ -55,4 +71,5 @@
   margin: auto;
   max-width: calc(70% - 200px);
   height: fit-content;
+  padding-left: 8rem;
 }
