@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .container {
   transition: 1.5s;
   overflow: hidden;
@@ -71,5 +67,11 @@
   margin: auto;
   max-width: calc(70% - 200px);
   height: fit-content;
-  padding-left: 8rem;
+  padding-left: 10rem;
+}
+
+@media screen and (max-width: 1080px) {
+  .content {
+    max-width: calc(100% - 200px);
+  }
 }
