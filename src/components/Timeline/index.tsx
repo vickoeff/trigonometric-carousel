@@ -18,16 +18,16 @@ interface ITimelineProps {
 export default function Timeline({ data, radius = 340 }: ITimelineProps) {
   const [activeButton, setActiveButton] = useState<number>(0);
 
-  // Function to position button in a circular layout
+  // ===> Function to position button in a circular layout
   const positionButton = useCallback((radius: number) => {
     const buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.circle-button');
 
     buttons.forEach((button: HTMLButtonElement, index) => {
-      const angle = (2 * Math.PI * index) / data.length;
+      const angle = (Math.PI * index) / data.length;
       const x = radius * Math.cos(angle);
-
       const y = radius * Math.sin(angle);
-      button.style.transform = `translate(${x}px, ${y}px) rotate(${((2 * Math.PI * activeButton) / data.length)}rad)`;
+
+      button.style.transform = `translate(${x}px, ${y}px) rotate(${((Math.PI * activeButton) / data.length)}rad)`;
     });
   }, [activeButton, data]);
 
@@ -37,7 +37,7 @@ export default function Timeline({ data, radius = 340 }: ITimelineProps) {
   }, [radius, positionButton]);
 
 
-  // Function to rotate the circle
+  // ===> Function to rotate the circle
   const rotateCircle = (targetAngle: number) => {
     const container = document.querySelector('.circle-container')! as HTMLElement;
     // Calculate the new rotation relative to the current angle
@@ -53,28 +53,29 @@ export default function Timeline({ data, radius = 340 }: ITimelineProps) {
     }, 500);
   };
 
+  // ===> Function Button on click
   const handleButtonClick = (i: number) => {
     setActiveButton(i);
 
-    const targetAngle = -((2 * Math.PI * i) / data.length);
+    const targetAngle = -((Math.PI * i) / data.length);
     rotateCircle(targetAngle);
 
     positionButton(radius);
   }
 
   return (
-    <div className="container" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", backgroundImage: `url(${data[activeButton].image})`, backgroundSize: "cover" }}>
-      <div style={{ display: "flex", justifyContent: "start", position: "relative", width: "100%" }}>
+    <div className="container" style={{ backgroundImage: `url(${data[activeButton].image})`, backgroundSize: "cover" }}>
+      <div className="container_inner">
         {/**
          * Timeline Controll
          */}
-        <TimelineCircle data={data} activeButton={activeButton} onClick={handleButtonClick} />
+        <TimelineCircle data={data} radius={radius} activeButton={activeButton} onClick={handleButtonClick} />
 
         {/**
          * Timeline Content
          */}
-        <TimelineContent title={data[activeButton].title} description={data[activeButton].description} />
+        <TimelineContent title={data[activeButton].title} description={data[activeButton].description} radius={radius} />
       </div>
-    </div>
+    </div >
   )
 }

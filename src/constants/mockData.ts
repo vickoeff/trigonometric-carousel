@@ -15,43 +15,43 @@ export const CAROUSEL_DATA = [
 
   {
     label: "3388 R.E.G",
-    title: "3 Lorem",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
-    image: "/wukong.jpg"
+    title: "Tekken 8",
+    description: "Tekken 8 is a 2024 fighting game developed by Bandai Namco Studios and Arika and published by Bandai Namco Entertainment. It is the eighth canon release in the Tekken series and the first one to debut on home systems instead of arcades",
+    image: "/tekken.jpg"
   },
 
   {
     label: "3345 R.E.G",
-    title: "4 Lorem",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
-    image: "/wukong.jpg"
+    title: "Forza 5",
+    description: "Forza Horizon 5 is a 2021 racing video game developed by Playground Games and published by Xbox Game Studios. It is the fifth Forza Horizon title and twelfth main instalment in the Forza series. The game is set in a fictionalised representation of Mexico.",
+    image: "/forza.jpg"
   },
 
   {
     label: "2134 R.E.G",
-    title: "5 Lorem",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
-    image: "/wukong.jpg"
+    title: "Final Fantasy XVI",
+    description: "Final Fantasy XVI is a 2023 action role-playing game developed and published by Square Enix. The sixteenth main installment in the Final Fantasy series, it was released for the PlayStation 5 in June 2023, with a Windows version released in September 2024.",
+    image: "/final-fantasy.jpg"
   },
 
   {
     label: "8902 R.E.G",
-    title: "6 Lorem",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
-    image: "/wukong.jpg"
+    title: "StarCraft II",
+    description: "StarCraft II is a military science fiction video game created by Blizzard Entertainment as a sequel to the successful StarCraft video game released in 1998. Set in the future, the game centers on a galactic struggle for dominance among the various fictional races of StarCraft",
+    image: "/starcraft.jpg"
   },
 
   {
     label: "4231 R.E.G",
-    title: "7 Lorem",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
-    image: "/wukong.jpg"
+    title: "Warcraft III",
+    description: "Warcraft III: Reign of Chaos is a high fantasy real-time strategy computer video game developed and published by Blizzard Entertainment released in July 2002.",
+    image: "/warcraft.jpg"
   },
 
   {
     label: "5324 R.E.G",
-    title: "8 Lorem",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tenetur aliquam similique, laborum rem tempore. Unde, quaerat quisquam dolore delectus optio pariatur a ducimus reiciendis aliquid accusantium adipisci officia laborum.",
-    image: "/wukong.jpg"
+    title: "Elden Ring",
+    description: "Elden Ring is a 2022 action role-playing game developed by FromSoftware. It was directed by Hidetaka Miyazaki with worldbuilding provided by American fantasy writer George R. R. Martin",
+    image: "/elden-ring.jpg"
   }
 ];
