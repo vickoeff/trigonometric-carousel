@@ -13,8 +13,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "Urbanist", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+}
+
 * {
   box-sizing: border-box;
+  font-family: "Urbanist";
 }
 
 body {
