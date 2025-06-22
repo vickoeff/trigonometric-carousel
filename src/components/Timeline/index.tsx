@@ -13,9 +13,10 @@ interface ITimelineProps {
     description: string;
     image: string;
   }[];
+  RenderContent?: React.ReactNode | ((props: { title: string; description: string; radius: number }) => React.ReactNode);
 }
 
-export default function Timeline({ data, radius = 340 }: ITimelineProps) {
+export default function Timeline({ data, radius = 340, RenderContent }: ITimelineProps) {
   const [activeButton, setActiveButton] = useState<number>(0);
 
   // ===> Function to position button in a circular layout
@@ -74,7 +75,13 @@ export default function Timeline({ data, radius = 340 }: ITimelineProps) {
         {/**
          * Timeline Content
          */}
-        <TimelineContent title={data[activeButton].title} description={data[activeButton].description} radius={radius} />
+        {
+          typeof RenderContent === "function"
+            ? RenderContent({ title: data[activeButton].title, description: data[activeButton].description, radius })
+            : RenderContent
+              ? RenderContent
+              : <TimelineContent title={data[activeButton].title} description={data[activeButton].description} radius={radius} />
+        }
       </div>
     </div >
   )
